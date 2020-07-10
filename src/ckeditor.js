@@ -38,6 +38,9 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 
+import ExportToPDF from '@ckeditor/ckeditor5-export-pdf/src/exportpdf.js';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
+
 export default class DecoupledEditor extends DecoupledEditorBase {}
 
 // Plugins to include in the build.
@@ -72,25 +75,28 @@ DecoupledEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	ExportToPDF,
+	ImageResize
 ];
 
 // Editor configuration.
 DecoupledEditor.defaultConfig = {
 	toolbar: {
 		items: [
+			'exportPdf',
 			'heading',
 			'|',
-			'fontfamily',
-			'fontsize',
+			'fontSize',
+			'fontFamily',
 			'fontColor',
 			'fontBackgroundColor',
 			'|',
 			'bold',
 			'italic',
 			'underline',
-			'strikethrough',
 			'|',
+			'pageBreak',
 			'alignment',
 			'|',
 			'numberedList',
@@ -99,11 +105,12 @@ DecoupledEditor.defaultConfig = {
 			'indent',
 			'outdent',
 			'|',
+			'todoList',
 			'link',
-			'blockquote',
+			'blockQuote',
+			'CKFinder',
 			'imageUpload',
 			'insertTable',
-			'mediaEmbed',
 			'|',
 			'undo',
 			'redo'
@@ -131,5 +138,5 @@ DecoupledEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'pt-br'
 };
