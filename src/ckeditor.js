@@ -5,7 +5,7 @@
 import DecoupledDocumentEditor from '@ckeditor/ckeditor5-editor-decoupled/src/decouplededitor.js';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
-import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter.js';
+import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials.js';
@@ -16,7 +16,6 @@ import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily.js';
 import FontSize from '@ckeditor/ckeditor5-font/src/fontsize.js';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
-import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar.js';
@@ -56,7 +55,6 @@ Editor.builtinPlugins = [
 	FontSize,
 	Heading,
 	Image,
-	ImageCaption,
 	ImageResize,
 	ImageStyle,
 	ImageToolbar,
@@ -80,64 +78,5 @@ Editor.builtinPlugins = [
 	Underline
 ];
 
-Editor.defaultConfig = {
-	toolbar: {
-		items: [
-			'exportPdf',
-			'|',
-			'heading',
-			'|',
-			'fontSize',
-			'fontFamily',
-			'fontBackgroundColor',
-			'fontColor',
-			'|',
-			'bold',
-			'italic',
-			'underline',
-			'|',
-			'pageBreak',
-			'alignment',
-			'|',
-			'numberedList',
-			'bulletedList',
-			'|',
-			'indent',
-			'outdent',
-			'|',
-			'link',
-			'blockQuote',
-			'imageUpload',
-			'insertTable',
-			'mediaEmbed',
-			'|',
-			'undo',
-			'redo'
-		]
-	},
-	image: {
-		styles: [
-			'full',
-			'alignLeft',
-			'alignRight'
-		],
-		toolbar: [
-			'imageStyle:alignLeft',
-			'imageStyle:full',
-			'imageStyle:alignRight',
-			'|',
-			'imageTextAlternative'
-		]
-	},
-	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
-		]
-	},
-	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'pt-br'
-};
 
 export default Editor;
